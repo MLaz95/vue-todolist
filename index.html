@@ -20,16 +20,36 @@
             <ul class="list-group">
                 <li v-for="(item, index) in toDoArray" class="list-group-item d-flex justify-content-between">
 
-                <div
-                    :class="item.done == true ? 'done' : ''"
-                >{{item.text}}</div>
+                    <div
+                        :class="item.done == true ? 'done' : ''"
+                    >
+                        {{item.text}}
+                    </div>
 
-                <i @click="deleteTask(index)" class="fa-solid fa-xmark"></i>
+                    <i @click="deleteTask(index)" class="fa-solid fa-xmark"></i>
                 </li>
             </ul>
-        </div>
-        
 
+
+            <div class="input-group my-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Add a new task"
+                    aria-label="Add a new task"
+                    aria-describedby="add-task"
+                    v-model="newTask.text"
+                    >
+                <button
+                class="btn btn-outline-secondary"
+                type="button"
+                id="add-task"
+                @click="addTask()"
+                >
+                    Add
+                </button>
+              </div>
+        </div>
     </div>
 
 
