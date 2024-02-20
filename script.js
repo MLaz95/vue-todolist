@@ -47,6 +47,10 @@ createApp({
             this.toDoArray.push({...this.newTask});
 
             this.newTask.text = '';
+        },
+
+        isDone(taskIndex){
+            this.toDoArray[taskIndex].done = !this.toDoArray[taskIndex].done
         }
     }
 
