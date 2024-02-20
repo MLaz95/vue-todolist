@@ -39,6 +39,7 @@
                     aria-label="Add a new task"
                     aria-describedby="add-task"
                     v-model="newTask.text"
+                    @keyup.enter="addTask()"
                     >
                 <button
                 class="btn btn-outline-secondary"
